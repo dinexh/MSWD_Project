@@ -1,0 +1,41 @@
+.nav-component{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+.nav-in{
+    margin:0.5rem;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+.nav-in-one{
+    width: 25%;
+    text-align: center;
+}
+.nav-in-one h1{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.nav-in-two{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-in-two button{
+    border-radius: 15px;
+    border: none;
+    background:lightcyan;
+    padding: 0.6rem;
+}
+.nav-in-two button:hover{
+    background:darkblue;
+    color: white;
+    transition: 0.6s;
+}
