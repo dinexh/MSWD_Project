@@ -1,10 +1,12 @@
 import "./nav.css"
+import { MdOutlineSportsBasketball } from "react-icons/md";
 const Nav = () => {
     return ( 
         <div className="nav-component">
             <div className="nav-in">
                 <div className="nav-in-one">
-                    <h1>Sports Management System - SMS</h1>
+                    <MdOutlineSportsBasketball className="navIcon" />
+                    <h1>Sports Management System</h1>
                 </div>
                 <div className="nav-in-two">
                     <button>
