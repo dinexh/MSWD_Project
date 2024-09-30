@@ -20,11 +20,22 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="App-Explore">
-          <div className="Explore-in">
-            <button>Explore More</button>
+      <div className="App-Sections">
+        <div className="App-Sections-heading">
+          <h1>Features!</h1>
+          <p>Maximize Your Experience: Features Tailored for Sports Enthusiasts!</p>
+        </div>
+        <div className="App-track">
+          <div className="App-track-in">
+            <div className="App-track-in-one">
+
+            </div>
+            <div className="App-track-in-two">
+
+            </div>
           </div>
         </div>
+      </div>
     </div>
   );
 }
