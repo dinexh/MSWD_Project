@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Hero from "./Assets/HeroGif.webp";
 import './App.css';
-import Nav from './componets/nav/nav';
-import Navi from './componets/nav_in/navi'; 
+import Nav from './components/nav/nav';
+import Navi from './components/nav_in/navi'; 
 import Tracking from './Assets/sports_tracking.jpg';
 import EventManagement from './Assets/Event_managemet.jpg.avif';
 import Stats from './Assets/stats.jpg.avif';
