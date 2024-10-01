@@ -1,4 +1,3 @@
-// src/pages/home/home.jsx
 import React, { useEffect, useState } from "react";
 import Hero from "../../Assets/HeroGif.webp";
 import '../../App.css';
@@ -24,8 +23,6 @@ function Home() {
     };
   
     window.addEventListener('scroll', handleScroll);
-  
-    // Cleanup the event listener when component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -48,7 +45,6 @@ function Home() {
   }, []);
 
   const handleLogout = () => {
-    // In a real app, you might clear authentication tokens here
     navigate('/login');
   };
 
@@ -56,7 +52,6 @@ function Home() {
     <div className="App">
       <div className={`sticky-nav ${showNavi ? 'visible' : ''}`}>
         <Navi />
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
       </div>
       <div className="App-hero">
         <div className="App-hero-in">
@@ -111,7 +106,6 @@ function Home() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default Home;
+    );
+  }
+  export default Home;

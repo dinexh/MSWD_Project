@@ -1,9 +1,6 @@
 .App {
   width: 100%;
 }
-.App-nav {
-  width: 100%;
-}
 .App-hero {
   width: 100%;
   height: 95vh;
@@ -251,22 +248,5 @@
 }
 .App-track-in.show, .App-event-in.show, .App-stats-in.show {
   opacity: 1;
-  transform: translateY(0);
-}
-.sticky-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-100%);
-  transition: all 0.5s ease-in-out;
-  z-index: 100;
-}
-.sticky-nav.visible {
-  opacity: 1;
-  visibility: visible;
   transform: translateY(0);
 }
