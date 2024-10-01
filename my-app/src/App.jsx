@@ -2,6 +2,7 @@ import Hero from "./Assets/HeroGif.webp";
 import './App.css';
 import Nav from './componets/nav/nav';
 import Tracking from './Assets/sports_tracking.jpg'
+import EventManagement from './Assets/Event_managemet.jpg.avif'
 function App() {
   return (
     <div className="App">
@@ -33,15 +34,20 @@ function App() {
             <div className="App-track-in-two">
               <h1>Live <span>Sports</span> Tracking</h1>
               <p>Our platform provides live score updates and event status tracking in real time. Whether you're a fan or a coach, you'll never miss a moment with instant updates on game progress, player performance, and key events.</p>
-              {/* <h2>Key Points</h2>
-              <ul>
-                <li>Real-time score updates for all sports events.</li>
-                <li>Event status (live, paused, completed).</li>
-                <li>Push notifications for critical moments (goals, substitutions, etc.).</li>
-              </ul> */}
             </div>
           </div>
-      </div>
+        </div>
+        <div className="App-event">
+            <div className="App-event-in">
+              <div className="App-event-in-one">
+                <h1>Event <span>Management</span></h1>
+                <p>Our platform simplifies the organization and management of sports events. Easily create event schedules, manage participants, and keep track of the event progress—all in one place.</p>
+              </div>
+              <div className="App-event-in-two">
+                <img src={EventManagement} alt="Event management feature" />
+              </div>
+            </div>
+        </div>
       </div>
     </div>
   );
