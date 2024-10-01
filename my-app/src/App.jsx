@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './componets/nav/nav';
 import Tracking from './Assets/sports_tracking.jpg'
 import EventManagement from './Assets/Event_managemet.jpg.avif'
+import Stats from './Assets/stats.jpg.avif'
 function App() {
   return (
     <div className="App">
@@ -47,6 +48,17 @@ function App() {
                 <img src={EventManagement} alt="Event management feature" />
               </div>
             </div>
+        </div>
+        <div className="App-stats">
+          <div className="App-stats-in">
+            <div className="App-stats-in-one">
+              <h1>Player Statistics</h1>
+              <p>Track and analyze player performance with real-time data and comprehensive statistics. From goals to assists, our platform provides detailed insights that help teams and fans understand player contributions on the field.</p>
+            </div>
+            <div className="App-stats-in-two">
+              <img src={Stats} alt="Player statistics feature" />``
+            </div>
+          </div>
         </div>
       </div>
     </div>

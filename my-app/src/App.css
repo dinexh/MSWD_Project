@@ -173,3 +173,47 @@
 .App-event-in-one span{
   color: rgb(220, 220, 117);
 }
+.App-stats {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.App-stats-in {
+  width: 95%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.App-stats-in-one {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.App-stats-in-one h1{
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.App-stats-in-one p {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: gray;
+}
+.App-stats-in-two {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App-stats-in-two img {
+  max-width: 80%;
+  height: auto;
+}
