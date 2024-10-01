@@ -6,7 +6,7 @@
     background-color: #f9f9f9;
     border-radius: 8px;
 }
-h2 {
+.container h2 {
     font-size: 32px;
     color: black;
     margin-bottom: 15px;
@@ -14,7 +14,7 @@ h2 {
     text-align: center;
 }
 
-h3 {
+.container h3 {
     margin-top: 20px;
     font-size: 28px;
     color:black;
@@ -105,7 +105,7 @@ h3 {
     background-color: #ddd;
 }
 
-p {
+.events-table p {
     color: black;
     font-size: 18px;
     text-align: center;
