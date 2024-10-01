@@ -10,7 +10,7 @@ const Auth = () => {
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLogin) {
