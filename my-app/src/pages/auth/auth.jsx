@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'; 
+import authImage from "../../Assets/auth_Image.jpg.avif";
 import "./auth.css";
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true); 
@@ -10,7 +11,7 @@ const Auth = () => {
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLogin) {
@@ -23,11 +24,18 @@ const Auth = () => {
   };
 
   return (
-    <div className="Auth">
-      <ToastContainer />
-      <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
-      <form onSubmit={handleSubmit} className="Auth-form">
-        {!isLogin && (
+    <div className="Auth-container">
+      <div className="Auth-container-in">
+        <div className="Auth-container-in-one">
+          <img src={authImage} className='AuthLogo' alt="" />
+        </div>
+        <div className="Auth-container-in-two">
+        <ToastContainer />
+        <div className="Auth-container-heading">
+        <h2>{isLogin ? 'Enter Your Credentials!' : 'Get Started!'}</h2>
+        </div>
+          <form onSubmit={handleSubmit} className="Auth-form">
+          {!isLogin && (
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input 
@@ -78,6 +86,8 @@ const Auth = () => {
             {isLogin ? 'Sign Up' : 'Login'}
           </button>
         </p>
+      </div>
+        </div>
       </div>
     </div>
   );
