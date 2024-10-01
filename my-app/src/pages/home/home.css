@@ -1,11 +1,8 @@
 .sticky-nav {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none; /* Prevents interaction when hidden */
-  }
-  
-  .sticky-nav.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it's above other content */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}

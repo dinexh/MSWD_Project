@@ -11,23 +11,21 @@ import './home.css';
 function Home() {
   const [showNavi, setShowNavi] = useState(false);
   const navigate = useNavigate();
-
   useEffect(() => {
     const handleScroll = () => {
-      const triggerPoint = 80; 
+      const triggerPoint = 60; 
       if (window.scrollY > triggerPoint) {
         setShowNavi(true);
       } else {
         setShowNavi(false);
       }
     };
-  
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
+
   useEffect(() => {
     const sections = document.querySelectorAll('.App-Sections-heading h1, .App-Sections-heading p, .App-track-in, .App-event-in, .App-stats-in');
     const observer = new IntersectionObserver((entries) => {
@@ -37,6 +35,7 @@ function Home() {
         }
       });
     }, { threshold: 0.1 });
+
     sections.forEach(section => {
       observer.observe(section);
     });
@@ -50,9 +49,7 @@ function Home() {
 
   return (
     <div className="App">
-      <div className={`sticky-nav ${showNavi ? 'visible' : ''}`}>
-        <Navi />
-      </div>
+      {showNavi && <div className="sticky-nav"><Navi /></div>}
       <div className="App-hero">
         <div className="App-hero-in">
           <div className="App-hero-in-one">
@@ -106,6 +103,7 @@ function Home() {
         </div>
       </div>
     </div>
-    );
-  }
-  export default Home;
+  );
+}
+
+export default Home;

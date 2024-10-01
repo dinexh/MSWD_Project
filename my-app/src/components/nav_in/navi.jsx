@@ -1,5 +1,12 @@
-import './navi.css'
-const navi = () => {
+import './navi.css';
+import { useNavigate } from 'react-router-dom';
+
+const Navi = () => {
+    const navigate = useNavigate();
+
+    const GoToLogin = () => {
+        navigate('/login');
+    };
     return (
         <div className="navi">
             <div className="navi-in">
@@ -7,13 +14,13 @@ const navi = () => {
                     <h1>Sports Management System</h1>
                 </div>
                 <div className="navi-in-two">
-                    <button>
+                    <button onClick={GoToLogin}>
                         Get Started
                     </button>
                 </div>
             </div> 
         </div>
-      );
-}
- 
-export default navi;
+    );
+};
+
+export default Navi;

@@ -1,45 +1,42 @@
-// src/pages/auth/auth.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './auth.css';
 
 function Auth() {
   const navigate = useNavigate();
-  const [credentials, setCredentials] = useState({ username: '', password: '' });
-  const [error, setError] = useState('');
-
-  const handleChange = (e) => {
-    setCredentials({...credentials, [e.target.name]: e.target.value});
-  };
-
+  const [isLogin, setIsLogin] = useState(true); 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, password } = credentials;
-
-    // Simple validation. Replace with real authentication logic.
-    if (username.trim() === '' || password.trim() === '') {
-      setError('Please enter both username and password.');
-      return;
+    if (isLogin) {
+      navigate('/Dashboard');
+    } else {
+      navigate('/Dashboard');
     }
-
-    // Simulate authentication success
-    // In a real app, you'd verify credentials here
-    navigate('/home');
   };
-
+  const toggleForm = () => {
+    setIsLogin(!isLogin);
+  };
   return (
     <div className="Auth">
-      <h2>Login</h2>
+      <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit} className="Auth-form">
-        {error && <p className="error">{error}</p>}
+        {!isLogin && (
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+            />
+          </div>
+        )}
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input 
             type="text" 
             id="username" 
             name="username" 
-            value={credentials.username} 
-            onChange={handleChange} 
             required 
           />
         </div>
@@ -49,15 +46,34 @@ function Auth() {
             type="password" 
             id="password" 
             name="password" 
-            value={credentials.password} 
-            onChange={handleChange} 
             required 
           />
         </div>
-        <button type="submit" className="cta-btn">Login</button>
+        {!isLogin && (
+          <div className="form-group">
+            <label htmlFor="confirmPassword">Confirm Password:</label>
+            <input 
+              type="password" 
+              id="confirmPassword" 
+              name="confirmPassword" 
+              required 
+            />
+          </div>
+        )}
+        <button type="submit" className="cta-btn-2">
+          {isLogin ? 'Login' : 'Sign Up'}
+        </button>
       </form>
+      <div className="toggle-form">
+        <p>
+          {isLogin ? "Don't have an account? " : "Already have an account? "}
+          <button type="button" onClick={toggleForm} className="toggle-btn">
+            {isLogin ? 'Sign Up' : 'Login'}
+          </button>
+        </p>
+      </div>
     </div>
   );
 }
 
-export default Auth; // Ensure this is a default export
+export default Auth;
