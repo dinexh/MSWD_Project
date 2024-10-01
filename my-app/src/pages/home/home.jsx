@@ -14,7 +14,7 @@ function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const triggerPoint = 100; 
+      const triggerPoint = 80; 
       if (window.scrollY > triggerPoint) {
         setShowNavi(true);
       } else {
