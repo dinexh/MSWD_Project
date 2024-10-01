@@ -4,6 +4,7 @@ import Navi from './components/nav_in/navi';
 import Auth from './pages/auth/auth';
 import Home from './pages/home/home';
 import Dashboard from './pages/dashboard/dash';
+import Events from './pages/events/events'; // Import the new Events page
 import './App.css';
 
 function App() {
@@ -21,10 +22,12 @@ function App() {
         <Route path="/login" element={<Auth />} />
         <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/events" element={<Events />} /> {/* Add new route for Events */}
       </Routes>
     </div>
   );
 }
+
 const AppWithRouter = () => (
   <Router>
     <App />

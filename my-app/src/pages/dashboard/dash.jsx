@@ -1,15 +1,23 @@
-// src/pages/dashboard/dash.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import './dash.css';
 
 function Dashboard() {
-  return (
-    <div className="Dashboard">
-      <h2>Dashboard</h2>
-      <p>Welcome to your dashboard! Here you can manage your sports events, track statistics, and more.</p>
-      {/* Add more dashboard content here */}
-    </div>
-  );
+    const navigate = useNavigate(); 
+
+    const GoToEvents = () => {
+        navigate('/events'); 
+    };
+
+    return (
+        <div className="Dashboard">
+            <h2>Dashboard</h2>
+            <p>Welcome to your dashboard! Here you can manage your sports events, track statistics, and more.</p>
+            <button onClick={GoToEvents}>
+                Events
+            </button>
+        </div>
+    );
 }
 
-export default Dashboard; // Ensure this is a default export
+export default Dashboard;
