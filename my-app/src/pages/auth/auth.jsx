@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './auth.css';
-
-function Auth() {
-  const navigate = useNavigate();
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom'; 
+import "./auth.css";
+const Auth = () => {
   const [isLogin, setIsLogin] = useState(true); 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isLogin) {
-      navigate('/Dashboard');
-    } else {
-      navigate('/Dashboard');
-    }
-  };
+  const navigate = useNavigate();
+
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isLogin) {
+      toast.success('Logged in successfully!');
+      navigate('/Dashboard');
+    } else {
+      toast.success('Signed up successfully!');
+      navigate('/Dashboard'); 
+    }
+  };
+
   return (
     <div className="Auth">
+      <ToastContainer />
       <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit} className="Auth-form">
         {!isLogin && (
@@ -74,6 +81,6 @@ function Auth() {
       </div>
     </div>
   );
-}
+};
 
 export default Auth;
