@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Hero from "../../Assets/HeroGif.webp";
 import '../../App.css';
 import Navi from '../../components/nav_in/navi'; 
+import Footer from "../../components/footer/footer";
 import Tracking from '../../Assets/sports_tracking.jpg';
 import EventManagement from '../../Assets/Event_managemet.jpg.avif';
 import Stats from '../../Assets/stats.jpg.avif';
@@ -100,6 +101,9 @@ function Home() {
               <img src={Stats} alt="Player statistics feature" />
             </div>
           </div>
+        </div>
+        <div className="App-footer">
+          <Footer/>
         </div>
       </div>
     </div>

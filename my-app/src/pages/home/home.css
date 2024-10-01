@@ -1,8 +1,8 @@
-.sticky-nav {
+/* .sticky-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Ensure it's above other content */
-  transition: all 0.3s ease-in-out; /* Smooth transition */
-}
+  z-index: 1000; 
+  transition: all 0.3s ease-in-out; 
+} */
