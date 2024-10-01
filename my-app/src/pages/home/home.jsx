@@ -56,7 +56,7 @@ function Home() {
           <div className="App-hero-in-one">
             <h1>Sports Management System</h1>
             <p>Stay in the Game: Real-Time Updates & Player Stats for Every Event!</p>
-            <button className="cta-btn" onClick={() => navigate('/dashboard')}>Join Now!</button>
+            <button className="cta-btn" onClick={() => navigate('/login')}>Join Now!</button>
           </div>
           <div className="App-hero-in-two">
             <img className="HeroImage" src={Hero} alt="Sports Event" />

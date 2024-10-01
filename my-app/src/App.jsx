@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navi from './components/nav_in/navi'; 
-// import Footer from "./components/footer/footer";
-import Footer from "./components/footer/footer";
 import Auth from './pages/auth/auth';
 import Home from './pages/home/home';
 import Dashboard from './pages/dashboard/dash';
@@ -16,7 +14,6 @@ function App() {
       {location.pathname === '/home' && (
         <>
           <Navi />
-          {/* <Footer/> */}
         </>
       )}
       <Routes>
