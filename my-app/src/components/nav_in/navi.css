@@ -3,30 +3,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent; 
-    position: fixed; 
+    background-color: black;
+    color: white;
     top: 0;
-    z-index: 1000; 
-    padding: 0.5rem 0;
+    position: sticky;
 }
 .navi-in {
-    width: 30%;
+    width: 98%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 20px;
-    backdrop-filter: blur(10px); 
-    padding: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    padding: 1rem;
 }
-.navi-in-one h1 {
+.navi-in-one{
+    width: 25%;
+}
+.navi-in-one h1 span {
     font-size: 1.4rem;
     font-weight: 600;
-    color: black; 
+    color: gold; 
 }
-
-.navi-in-two button {
+.navi-in-two{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navi-in-two-in{
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navi-in-two-in h2{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.navi-in-two-in h2:hover{
+    color: gold;
+}
+.navi-in-three button {
     border: none;
     border-radius: 10px;
     background-color: yellow;
@@ -36,6 +53,6 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-.navi-in-two button:hover {
+.navi-in-three button:hover {
     background-color: orange; /* Add a hover effect for better UX */
 }
