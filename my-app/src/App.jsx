@@ -1,37 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Navi from './components/nav_in/navi'; 
-import Auth from './pages/auth/auth';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from './pages/home/home';
+import Auth from './pages/auth/auth';
 import Dashboard from './pages/dashboard/dash';
-import Events from './pages/events/events'; 
+import EventForm from './pages/events/EventForm';
 import './App.css';
 
 function App() {
-  const location = useLocation();
-
   return (
-    <div className="App">
-      {location.pathname === '/home' && (
-        <>
-          <Navi />
-        </>
-      )}
+    <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Auth />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<Auth />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/events" element={<Events />} /> 
+        <Route path="/events" element={<EventForm />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </div>
+    </Router>
   );
 }
 
-const AppWithRouter = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-export default AppWithRouter;
+export default App;

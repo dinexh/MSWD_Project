@@ -290,7 +290,7 @@
 
 .App-roles {
   padding: 6rem 2rem;
-  background: var(--background-white);
+  /* background: var(--background-white); */
 }
 
 .roles-container {
