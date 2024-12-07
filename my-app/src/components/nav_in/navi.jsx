@@ -1,34 +1,34 @@
-import './navi.css';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './navi.css';
 
-const Navi = () => {
-    const navigate = useNavigate();
+function Navi() {
+  const navigate = useNavigate();
 
-    const GoToLogin = () => {
-        navigate('/login');
-    };
-    return (
-        <div className="navi">
-            <div className="navi-in">
-                <div className="navi-in-one">
-                    <h1> <span>Sports Management System</span></h1>
-                </div>
-                <div className="navi-in-two">
-                    <div className="navi-in-two-in">
-                        <h2>Live Score</h2>
-                        <h2>Event Management</h2>
-                        <h2>All Events</h2>
-                        <h2>Players Stats</h2>
-                    </div>
-                </div>
-                <div className="navi-in-three">
-                    <button onClick={GoToLogin}>
-                        Get Started
-                    </button>
-                </div>
-            </div> 
-        </div>
-    );
-};
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <nav className="nav-container">
+      <div className="nav-logo" onClick={() => navigate('/')}>
+        SportSync
+      </div>
+      <div className="nav-links">
+        <button onClick={() => scrollToSection('tracking')}>Tracking</button>
+        <button onClick={() => scrollToSection('events')}>Events</button>
+        <button onClick={() => scrollToSection('stats')}>Statistics</button>
+        <button onClick={() => scrollToSection('chatbot')}>AI Assistant</button>
+      </div>
+      <div className="nav-auth">
+        <button className="nav-btn login" onClick={() => navigate('/login')}>Login</button>
+        <button className="nav-btn register" onClick={() => navigate('/register')}>Register</button>
+      </div>
+    </nav>
+  );
+}
 
 export default Navi;

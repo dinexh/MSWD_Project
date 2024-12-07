@@ -7,6 +7,7 @@
     color: white;
     top: 0;
     position: sticky;
+    z-index: 1000;
 }
 .navi-in {
     width: 98%;
@@ -39,9 +40,11 @@
 .navi-in-two-in h2{
     font-size: 1rem;
     font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 .navi-in-two-in h2:hover{
-    color: gold;
+    color: #007bff;
 }
 .navi-in-three button {
     border: none;
@@ -55,4 +58,140 @@
 
 .navi-in-three button:hover {
     background-color: orange; /* Add a hover effect for better UX */
+}
+
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links button:hover {
+  color: var(--primary-color);
+}
+
+.nav-links button:hover::after {
+  width: 80%;
+}
+
+.nav-auth {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn.login {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.nav-btn.register {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: white;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-auth {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links button {
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .nav-auth {
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    width: 100%;
+  }
 }
