@@ -41,20 +41,21 @@ const Auth = () => {
         return;
       }
 
-      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-      const response = await axios.post(`http://localhost:5000${endpoint}`, {
+      // Mock user data instead of backend call
+      const mockUser = {
         name: formData.name,
-        email: formData.email,
-        password: formData.password
-      });
+        email: formData.email
+      };
 
-      const { token } = response.data;
-      localStorage.setItem('token', token);
+      // Store mock user info in localStorage
+      localStorage.setItem('user', JSON.stringify(mockUser));
       
-      toast.success(isLogin ? 'Logged in successfully!' : 'Signed up successfully!');
+      toast.success(isLogin ? 'Logged in successfully!' : 'Registered successfully!');
       navigate('/dashboard');
+      
     } catch (error) {
-      toast.error(error.response?.data?.message || 'An error occurred');
+      console.error('Error:', error);
+      toast.error('An error occurred. Please try again.');
     }
   };
 
